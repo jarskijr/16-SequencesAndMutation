@@ -10,9 +10,9 @@ for ITERATING through SEQUENCES, including selections from:
   -- Looking at two sequences in parallel
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+         their colleagues and Jacob Jarski.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -78,6 +78,14 @@ def run_test_shortest_string():
 
 
 def shortest_string(strings):
+    for k in range(len(strings)):
+        if k == 0:
+            shortest = strings[k]
+        else:
+            if len(strings[k]) < len(shortest):
+                shortest = strings[k]
+    return shortest
+
     """
     What comes in:
       -- a non-empty sequence of strings
@@ -103,7 +111,7 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
@@ -149,6 +157,12 @@ def run_test_index_of_largest_number():
 
 
 def index_of_largest_number(numbers, n):
+    index_number = 0
+    highest = -math.inf
+    for k in range(0, n):
+        if numbers[k] > highest:
+            (highest, index_number) = (numbers[k], k)
+    return index_number
     """
     What comes in:
       -- a sequence of numbers
@@ -180,7 +194,7 @@ def index_of_largest_number(numbers, n):
 
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
