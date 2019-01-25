@@ -232,6 +232,12 @@ def run_test_number_of_stutters():
 
 
 def number_of_stutters(s):
+    stutter = 0
+    for k in range(len(s)):
+        if k > 0:
+            if s[k] == s[k-1]:
+                stutter = stutter + 1
+    return stutter
     """
     What comes in:
       -- a string s
@@ -249,12 +255,13 @@ def number_of_stutters(s):
        :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
 
 def run_test_is_palindrome():
+
     """ Tests the   is_palindrome   function. """
     print()
     print('--------------------------------------------------')
@@ -294,6 +301,13 @@ def run_test_is_palindrome():
 
 
 def is_palindrome(s):
+    palindrome_string = ''
+    for k in range(len(s)-1, -1, -1):
+        palindrome_string = palindrome_string + s[k]
+    if s == palindrome_string:
+        return True
+    else:
+        return False
     """
     What comes in:
       -- a string s that (in this simple version of the palindrome
@@ -322,7 +336,7 @@ def is_palindrome(s):
       :type s: str
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ####################################################################
@@ -361,6 +375,11 @@ def run_test_count_same():
 
 
 def count_same(sequence1, sequence2):
+    count_same_counter = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            count_same_counter = count_same_counter + 1
+    return count_same_counter
     """
     What comes in:
       -- two sequences that have the same length
@@ -389,7 +408,7 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # ------------------------------------------------------------------
 
